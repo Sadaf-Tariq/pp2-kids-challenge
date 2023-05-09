@@ -5,34 +5,70 @@
 }
 
 body{
-    background: grey;
-    color: black;
+    background: #FFF9DE;
+    color: #FF6969;
     text-align: center;
 }
 
 h1{
-    font-size: 400%;
+    margin-top: 5%;
+    font-size: 450%;
     font-family: "Londrina Sketch", sans-serif;
 }
 
 .game-area{
-    background-color: #E6ECF0;
+    background-color: #FFD4B2;
     box-sizing: border-box;
     width: 85%;
     height: 65vh;
     max-height: 450px;
     max-width: 830px;
-    margin-top: 10px;
+    margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
 }
 
 .name-area{
-    margin: 10%;
+    margin: auto;
+    margin-top: 10px;
+    width: 60%;
+    height: 30%;
 }
 
 .name{
+    padding-top: 20px;
     font-family : "Flavors",sans-serif;
-    font-size: 150%;
+    font-size: 300%;
+}
+
+#name-id{
+    width: 20%;
+    background-color: #FFF9DE;
+}
+
+.button{
+    width: 15%;
+    height: auto;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFF9DE;
+    letter-spacing: 1px;
+    background-color: #FF6969;
+}
+
+.submit{
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.player{
+    margin: 30px 70px 20px 70px;
+}
+
+a {
+    text-decoration: none;
+    color: #FF6969
 }
