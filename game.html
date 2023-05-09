@@ -11,25 +11,30 @@
       </style>
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Welcome to Kids-Challenge</title>
+    <title>Let's Play!</title>
 </head>
 <body>
-    <!-- WElcome page -->
+    <!-- Game's page -->
 
     <!-- Welcome heading -->
-     <h1 class="welcome">Welcome to Kids-Challenge!</h1>
+     <h1 class="welcome-player">Welcome player!!!</h1>
    
     <div class="game-area">
         <!-- Asking name -->
-       
+       <p id="turn" >Your turn!</p>
         <!-- Player option -->
         <div>
-            <p class="name">Who do you want to play with ?</p>
-            <button class="button player">with Computer!</button>
-            <button class="button player">With your Friend!</button>
+            <p id="question" class="name">What color is this ?</p>
+            <div id="question-img"><img src="assets/images/red.jpg" alt="What color is this (red)"></div>
+            <button class="button options" id="option1">Green</button>
+            <button class="button options" id="option2">Red</button>
         </div> 
 
-        <div> <p class="name"><a href="game.html">Let's Play!</a></p></div>
+        <div></div>
+    </div>
+    <div class="score-area">
+        <p class="scores">Omar's Score <span id="score">0</span></p>
+        <p class="scores">Computer's Score <span id="incorrect">0</span></p>
     </div>
     <!-- Font awesome script-->
     <script src="https://kit.fontawesome.com/1f98dc5220.js" crossorigin="anonymous"></script>
