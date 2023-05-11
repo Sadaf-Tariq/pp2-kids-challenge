@@ -1,5 +1,5 @@
 /* var image = document.createElement("img");
-var imageParent = document.getElementById("question-img1");
+var imageParent = document.getElementById("question-img");
 searchPic = new Image();
 searchPic.src = "assets/images/red.jpg";
 image.src = searchPic.src;            // image.src = "IMAGE URL/PATH"
@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function(){
 function runGame(){
 
     let category = getCategory();   
-    let categoryQuestion = categoryQuestionSelector(category);
+    let quiz = categoryQuestionSelector(category);
+    appendImage(quiz[1]);
+    console.log(quiz);
 }
 
 function getCategory(){
@@ -39,6 +41,8 @@ function categoryQuestionSelector(category){
     } else if (category === 'vehicles'){
         quiz = vehicleQuestions();
     }
+
+    return quiz;
 
 }
 
@@ -110,6 +114,15 @@ function selectWrongAnswer(wrongAnswers,rightAnswer){
         }
     }
     return wrongAnswers[Math.floor(Math.random()*wrongAnswers.length)];
+}
+
+function appendImage(pathSrc){
+    let image = document.createElement("img");
+    let imageParent = document.getElementById("question-img");
+    searchPic = new Image(100, 100);
+    searchPic.src = pathSrc;
+    image.src = searchPic.src;            // image.src = "IMAGE URL/PATH"
+    imageParent.appendChild(image);
 }
 
 
