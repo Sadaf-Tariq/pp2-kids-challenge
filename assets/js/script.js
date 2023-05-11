@@ -3,50 +3,97 @@ var imageParent = document.getElementById("question-img1");
 searchPic = new Image();
 searchPic.src = "assets/images/red.jpg";
 image.src = searchPic.src;            // image.src = "IMAGE URL/PATH"
-imageParent.appendChild(image); */
+imageParent.appendChild(image);
+//
+let randomKey = keys[Math.floor(Math.random()*keys.length)];
+undefined
+console.log(obj[randomKey]); */
 
 /* Start Game after DOM finished loading.. */
 
-let userName;
-let computer;
-let friend;
-
-
 document.addEventListener("DOMContentLoaded", function(){
-
-    let buttons = document.getElementsByTagName("button");
-    document.getElementById("name-id").focus();
-
-    for (let button of buttons){
-        
-        button.addEventListener("click", function(){
-
-            if (this.getAttribute("data-type") === "submit") {
-                
-                 userName = document.getElementById("name-id").value;
-                console.log(userName);
-
-            } else if (this.getAttribute("data-type") === "computer") {
-                
-                computer = document.getElementById("computer").textContent;
-                console.log(computer);
-
-            } else if (this.getAttribute("data-type") === "friend") {
-                
-                friend = document.getElementById("friend").textContent;
-                console.log(friend);
-
-            } 
-    
-        });
-    }
+        runGame();
+   
 });
 
-
-
-
 function runGame(){
-   
+
+    let category = getCategory();   
+    let categoryQuestion = categoryQuestionSelector(category);
+}
+
+function getCategory(){
+    let category = ['colors', 'fruits' , 'vehicles'];
+    let randomCategory = Math.floor(Math.random()*category.length);
+    return category[randomCategory] ;
+}
+
+function categoryQuestionSelector(category){
+
+    if (category === 'colors'){
+        colorQuestions();
+    } else if (category === 'fruits'){
+        fruitQuestions();
+    } else if (category === 'vehicles'){
+        vehicleQuestions();
+    }
+
+}
+
+function colorQuestions(){
+    console.log("color Questions called!!!");
+    let wrongAnswers = ['Red', 'Green', 'Blue', 'Pink', 'Black', 
+                    'White', 'Orange', 'Purple', 'Yellow', 'Brown'];
+    let questions = ['What color is this?', 'Do you know this color?', 'Can you guess this color?'];
+    let colorImagePaths = { Red : 'assets/images/red.jpg' ,
+                 Green : 'assets/images/green.jpg',
+                 Blue : 'assets/images/blue.jpg',
+                 Pink : 'assets/images/pink.jpg',
+                 Black : 'assets/images/black.jpg',
+                 White : 'assets/images/white.jpg',
+                 Orange : 'assets/images/orange.jpg',
+                 Purple : 'assets/images/purple.jpg',
+                 Yellow : 'assets/images/yellow.jpg',
+                 Brown : 'assets/images/brown.jpg'
+    };
+    let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
+    console.log(quizQuestion);
+    let keys = Object.keys(colorImagePaths);
+    let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
+    let quizPath = colorImagePaths[rightAnswer];
+    console.log(rightAnswer,quizPath); 
+    return [quizQuestion, quizPath, rightAnswer];
+}
+
+
+function fruitQuestions(){
+    console.log("Fruit Questions called!!!");
+    let quiz = { "What color is this?" : ['assets/images/red.jpg','Red'],
+                 "What color is this?" : ['assets./images/green.jpg','Green'],
+                 "What color is this?" : ['assets./images/blue.jpg','Blue'],
+                 "What color is this?" : ['assets./images/black.jpg','Black'],
+                 "What color is this?" : ['assets./images/orange.jpg','Orange'],
+                 "What color is this?" : ['assets./images/pink.jpg','Pink'],
+                 "What color is this?" : ['assets./images/purple.jpg','Purple'],
+                 "What color is this?" : ['assets./images/brown.jpg','Brown'],
+                 "What color is this?" : ['assets./images/white.jpg','White'],
+                 "What color is this?" : ['assets./images/yellow.jpg','Yellow']
+    };
+}
+
+function vehicleQuestions(){
+    console.log("Vehicle Questions called!!!");
+    let quiz = { "What color is this?" : ['assets/images/red.jpg','Red'],
+                 "What color is this?" : ['assets./images/green.jpg','Green'],
+                 "What color is this?" : ['assets./images/blue.jpg','Blue'],
+                 "What color is this?" : ['assets./images/black.jpg','Black'],
+                 "What color is this?" : ['assets./images/orange.jpg','Orange'],
+                 "What color is this?" : ['assets./images/pink.jpg','Pink'],
+                 "What color is this?" : ['assets./images/purple.jpg','Purple'],
+                 "What color is this?" : ['assets./images/brown.jpg','Brown'],
+                 "What color is this?" : ['assets./images/white.jpg','White'],
+                 "What color is this?" : ['assets./images/yellow.jpg','Yellow']
+    };
 }
 
 
