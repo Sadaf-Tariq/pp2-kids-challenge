@@ -29,13 +29,15 @@ function getCategory(){
 }
 
 function categoryQuestionSelector(category){
+    
+    let quiz;
 
     if (category === 'colors'){
-        colorQuestions();
+        quiz = colorQuestions();
     } else if (category === 'fruits'){
-        fruitQuestions();
+        quiz = fruitQuestions();
     } else if (category === 'vehicles'){
-        vehicleQuestions();
+        quiz = vehicleQuestions();
     }
 
 }
@@ -56,13 +58,16 @@ function colorQuestions(){
                  Yellow : 'assets/images/yellow.jpg',
                  Brown : 'assets/images/brown.jpg'
     };
+
     let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
     console.log(quizQuestion);
     let keys = Object.keys(colorImagePaths);
     let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
     let quizPath = colorImagePaths[rightAnswer];
     console.log(rightAnswer,quizPath); 
-    return [quizQuestion, quizPath, rightAnswer];
+    let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+    console.log(wrongAnswer);
+    return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
 
 
@@ -94,6 +99,17 @@ function vehicleQuestions(){
                  "What color is this?" : ['assets./images/white.jpg','White'],
                  "What color is this?" : ['assets./images/yellow.jpg','Yellow']
     };
+}
+
+function selectWrongAnswer(wrongAnswers,rightAnswer){
+
+    for (let i in wrongAnswers){
+        if(wrongAnswers[i] === rightAnswer) {
+            wrongAnswers.splice(i, 1);
+            break;
+        }
+    }
+    return wrongAnswers[Math.floor(Math.random()*wrongAnswers.length)];
 }
 
 
