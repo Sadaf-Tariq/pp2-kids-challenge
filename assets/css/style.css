@@ -6,7 +6,6 @@
 
 body{
     background: url("../images/bg.jpg") no-repeat center center;
-    background-size: cover;
     color: #E74646;
     text-align: center;
 }
@@ -91,12 +90,18 @@ a {
     font-size: 250%;
 }
 
-
 #question-img{
+    margin-bottom: 50px;
+}
+
+
+img{
     height: 210px;
-    width: 210px;
+    width: 240px;
     margin:auto;
     margin-top: 40px;
+    border: 2px solid #E74646;
+    border-radius: 4px;
 }
 
 .options {
@@ -143,6 +148,10 @@ a {
         margin: 30px 40px 0 40px;
         letter-spacing: 1px;
         font-size: 90%;
+    }
+
+    body{
+        background-size: cover;
     }
     
 }

@@ -18,10 +18,29 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function runGame(){
 
+    let quizDone =[''];
     let category = getCategory();   
     let quiz = categoryQuestionSelector(category);
     appendImage(quiz[1]);
+    appendQuiz(quiz[0],quiz[2],quiz[3]);
+    quizDone.push(quiz[2]);
+
+    let buttons = document.getElementsByTagName('button');
+    for (let button of buttons){
+        button.addEventListener('click', function(){
+            let userAnswer = this.innerText;
+            let isCorrect = userAnswer === quiz[2].toUpperCase();
+            if (isCorrect){
+                console.log("You are right!");
+                incrementScore();
+            } else {
+                console.log("Your nswer is wrong!");
+                decrementScore();
+            }
+        });
+    }
     console.log(quiz);
+    console.log(quizDone);
 }
 
 function getCategory(){
@@ -125,4 +144,30 @@ function appendImage(pathSrc){
     imageParent.appendChild(image);
 }
 
+function appendQuiz(question, rightAnswer, wrongAnswer){
 
+    let que = document.getElementById("question");
+    let option1 = document.getElementById("option1");
+    let option2 = document.getElementById("option2");
+    que.innerText = question;
+    let options = [rightAnswer, wrongAnswer];
+    let num = Math.floor(Math.random()*options.length);
+    option1.innerText = options[num];
+    options.splice(num, 1);
+    option2.innerText = options[0];
+}
+
+
+function incrementScore() {
+
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = oldScore + 10;
+
+}
+
+function decrementScore() {
+
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = oldScore - 10;
+
+}
