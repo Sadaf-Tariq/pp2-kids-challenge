@@ -17,24 +17,39 @@
     <!-- WElcome page -->
 
     <!-- Welcome heading -->
-     <h1 class="welcome">Welcome to Kids-Challenge!</h1>
+    <h1 class="welcome" id ="welcome">Welcome to Kids-Challenge!</h1>
    
-    <div class="game-area">
+    <div class="game-area" id="welcome-area">
         <!-- Asking name -->
         <div class="name-area">
             <p class="name">Whats is your name ?</p>
             <input id="name-id" type="text" >
-            <button data-type="submit" class="button submit">Submit!</button>
+            <button data-type="submit" class="button submit" id = "submit">Submit!</button>
         </div>
 
+        <div id="lp-div"> <p class="name">Let's Play!</p></div>
+    </div>
+    
+    <!-- Game Area -->
+    <h1 class ="hide" id="welcome-player">Welcome player!!!</h1>
+    <div class="game-area hide" id = "game-area">
+       <p id="turn" >Can you score 100!!</p>
         <!-- Player option -->
-        <div id="player-div">
-            <p class="name">Who do you want to play with ?</p>
-            <button data-type="computer" class="button player" id ="computer"><p>Computer!</p></button>
-            <button data-type="friend" class="button player" id="friend"><p>Friend!</p></button>
+        <div>
+            <p id="question" class="name">What color is this ?</p>
+            <div id="question-img"><img src = 'assets/images/welcome.jpg'></div>
+            <button data-type="option1" class="button options" id="option1" onclick="checkResult(this)">Green</button>
+            <button data-type="option2" class="button options" id="option2" onclick="checkResult(this)">Red</button>
         </div> 
 
-        <div id="lp-div"> <p class="name"><a href="game.html">Let's Play!</a></p></div>
+        <div class="score-area">
+            <p class="scores">Omar's Score: <span id="score">0</span></p>
+            <p class="name" id="next">Start</p>
+        </div>
+      
+        <div id="q-count">
+            <p class="scores">Question #: <span id="qCount">0</span></p>
+        </div>
     </div>
     <!-- Font awesome script-->
     <script src="https://kit.fontawesome.com/1f98dc5220.js" crossorigin="anonymous"></script>

@@ -224,3 +224,18 @@ let oldScore = parseInt(document.getElementById("score").innerText);
 document.getElementById("score").innerText = oldScore - 10;
 
 }
+
+for (let button of buttons){
+    button.addEventListener('click', function(){
+        if (this.innerText === quiz[2].toUpperCase() ){
+            console.log("You are right!!!");
+            incrementScore();
+            document.querySelector('#option1').disabled = true;
+            document.querySelector('#option2').disabled = true;
+        } else  {
+            console.log("Your answer is wrong!");
+            decrementScore();
+        }
+        
+    });
+} 

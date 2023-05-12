@@ -11,50 +11,61 @@ console.log(obj[randomKey]); */
 
 /* Start Game after DOM finished loading.. */
 
+let welcome = document.getElementById("welcome");
+let welcomeArea = document.getElementById("welcome-area");
+let gameArea = document.getElementById("game-area");
+let welcomePlayer = document.getElementById("welcome-player");
+let change = document.getElementById("lp-div");
+let userName = document.getElementById("name-id");
+let submit = document.getElementById("submit");
+let start = document.getElementById("next");
+let buttons = document.getElementsByTagName('button');
+let quiz;
+
+
+
+
 document.addEventListener("DOMContentLoaded", function(){
     
-        appendImage('assets/images/welcome.jpg');
-        appendQuiz('Are you ready?', 'Yes' , 'No');
+    appendImage('assets/images/welcome.jpg');
+    appendQuiz('Are you ready?', 'Yes' , 'No');
 
-        
-    let buttons = document.getElementsByTagName('button');
-    for (let button of buttons){
-        button.addEventListener('click', function(){
-            if (this.innerText === quiz[2].toUpperCase() ){
-                console.log("You are right!!!");
-                incrementScore();
-                document.querySelector('#option1').disabled = true;
-                document.querySelector('#option2').disabled = true;
-            } else if ( this.innerText === ('Start').toUpperCase()){
-                this.innerText = 'Next';
-                runGame();
-            } else {
-                console.log("Your answer is wrong!");
-                decrementScore();
-            }
-            
-        });
-    }   
-   
+    
+    start.addEventListener('click', runGame);    
+
+}); 
+
+change.addEventListener('click', function(){
+    welcome.classList.add('hide');
+    welcomeArea.classList.add('hide');
+    welcomePlayer.classList.remove('hide');
+    gameArea.classList.remove('hide');
 });
+
+submit.addEventListener('click', function(){
+    welcomePlayer.innerText = `Welcome ${userName.value} !`;
+});
+
+
+
 
 function runGame(){
 
     document.querySelector('#option1').disabled = false;
     document.querySelector('#option2').disabled = false;
-
-
+ 
+    start.innerText = 'Next';
     let quizDone =[''];
     let category = getCategory();   
-    let quiz = categoryQuestionSelector(category);
+    quiz = categoryQuestionSelector(category);
     appendImage(quiz[1]);
     appendQuiz(quiz[0],quiz[2],quiz[3]);
     quizDone.push(quiz[2]);
+   
 
-    console.log(quiz);
-    console.log(quizDone);
+
 }
-
+      
 function getCategory(){
     let category = ['colors', 'fruits' , 'things','animals'];
     let randomCategory = Math.floor(Math.random()*category.length);
@@ -222,12 +233,27 @@ function appendQuiz(question, rightAnswer, wrongAnswer){
 }
 
 
+function checkResult(element){
+    if (element.innerText === quiz[2].toUpperCase() ){
+        console.log("You are right!!!");
+        incrementScore();
+       
+    } else  {
+        console.log("Your answer is wrong!");
+        decrementScore();
+    }
+    document.querySelector('#option1').disabled = true;
+    document.querySelector('#option2').disabled = true;
+    let qCount = parseInt(document.getElementById("qCount").innerText);
+    document.getElementById("qCount").innerText = ++qCount;
+}
+
+
 function incrementScore() {
 
     console.log('increment score called!');
-
     let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore;
+    document.getElementById("score").innerText = ++oldScore ;
     console.log(oldScore);
 }
 
@@ -235,7 +261,10 @@ function decrementScore() {
 
     console.log('deccrement score called!');
     let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = --oldScore;
+    document.getElementById("score").innerText = --oldScore ;
     console.log(oldScore);
+ 
 
 }
+
+
