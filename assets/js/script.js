@@ -28,15 +28,20 @@ function runGame(){
     let buttons = document.getElementsByTagName('button');
     for (let button of buttons){
         button.addEventListener('click', function(){
-            let userAnswer = this.innerText;
-            let isCorrect = userAnswer === quiz[2].toUpperCase();
-            if (isCorrect){
-                console.log("You are right!");
+            if (this.innerText === quiz[2].toUpperCase() ){
+                let dataType = this.getAttribute("data-type");
+                if  (dataType === "option1"){
+                    document.querySelector('#option2').disabled = true;
+                } else {
+                    document.querySelector('#option1').disabled = true;
+                }
+                console.log("You are right!!!");
                 incrementScore();
             } else {
-                console.log("Your nswer is wrong!");
+                console.log("Your answer is wrong!");
                 decrementScore();
             }
+            
         });
     }
     console.log(quiz);
@@ -44,7 +49,7 @@ function runGame(){
 }
 
 function getCategory(){
-    let category = ['colors', 'fruits' , 'vehicles'];
+    let category = ['colors', 'fruits' , 'things','animals'];
     let randomCategory = Math.floor(Math.random()*category.length);
     return category[randomCategory] ;
 }
@@ -57,9 +62,10 @@ function categoryQuestionSelector(category){
         quiz = colorQuestions();
     } else if (category === 'fruits'){
         quiz = fruitQuestions();
-    } else if (category === 'vehicles'){
-        quiz = vehicleQuestions();
-    }
+    } else if (category === 'things'){
+        quiz = thingQuestions();
+    } else if (category === 'animals'){
+        quiz = animalQuestions();
 
     return quiz;
 
@@ -83,46 +89,93 @@ function colorQuestions(){
     };
 
     let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
-    console.log(quizQuestion);
     let keys = Object.keys(colorImagePaths);
     let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
     let quizPath = colorImagePaths[rightAnswer];
-    console.log(rightAnswer,quizPath); 
     let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
-    console.log(wrongAnswer);
     return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
 
 
 function fruitQuestions(){
     console.log("Fruit Questions called!!!");
-    let quiz = { "What color is this?" : ['assets/images/red.jpg','Red'],
-                 "What color is this?" : ['assets./images/green.jpg','Green'],
-                 "What color is this?" : ['assets./images/blue.jpg','Blue'],
-                 "What color is this?" : ['assets./images/black.jpg','Black'],
-                 "What color is this?" : ['assets./images/orange.jpg','Orange'],
-                 "What color is this?" : ['assets./images/pink.jpg','Pink'],
-                 "What color is this?" : ['assets./images/purple.jpg','Purple'],
-                 "What color is this?" : ['assets./images/brown.jpg','Brown'],
-                 "What color is this?" : ['assets./images/white.jpg','White'],
-                 "What color is this?" : ['assets./images/yellow.jpg','Yellow']
-    };
+    let wrongAnswers = ['Apple', 'Banana', 'Grapes', 'Blueberry', 'DragonFruit', 
+    'Raspberry', 'Orange', 'PineApple', 'Pear', 'Strawberry'];
+    let questions = ['What delicious fruit is this?', 'Do you know this tasty fruit?', 'Can you guess this healthy fruit?'];
+    let colorImagePaths = { Apple : 'assets/images/apple.jpg' ,
+                        Banana : 'assets/images/banana.jpg',
+                        Grapes : 'assets/images/grapes.jpg',
+                        Blueberry : 'assets/images/blueberry.jpg',
+                        DragonFruit : 'assets/images/dragon-fruit.jpg',
+                        Raspberry : 'assets/images/raspberry.jpg',
+                        Orange : 'assets/images/orange(2).jpg',
+                        PineApple : 'assets/images/pineApple.jpg',
+                        Pear : 'assets/images/pear.jpg',
+                        Strawberry : 'assets/images/strawberry.jpg'
+};
+
+let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
+let keys = Object.keys(colorImagePaths);
+let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
+let quizPath = colorImagePaths[rightAnswer];
+let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
 
-function vehicleQuestions(){
-    console.log("Vehicle Questions called!!!");
-    let quiz = { "What color is this?" : ['assets/images/red.jpg','Red'],
-                 "What color is this?" : ['assets./images/green.jpg','Green'],
-                 "What color is this?" : ['assets./images/blue.jpg','Blue'],
-                 "What color is this?" : ['assets./images/black.jpg','Black'],
-                 "What color is this?" : ['assets./images/orange.jpg','Orange'],
-                 "What color is this?" : ['assets./images/pink.jpg','Pink'],
-                 "What color is this?" : ['assets./images/purple.jpg','Purple'],
-                 "What color is this?" : ['assets./images/brown.jpg','Brown'],
-                 "What color is this?" : ['assets./images/white.jpg','White'],
-                 "What color is this?" : ['assets./images/yellow.jpg','Yellow']
-    };
+
+function thingQuestions(){
+    console.log("Things Questions called!!!");
+    let wrongAnswers = ['Eggs', 'Flower', 'GarbageTruck', 'Glasses', 'Pencil', 
+    'Plate', 'Rock', 'Scissors', 'Shovel', 'Snow'];
+    let questions = ['What thing is this?', 'Do you know this thing?', 'Can you guess this thing?'];
+    let colorImagePaths = { Eggs : 'assets/images/Eggs.jpg' ,
+                        Flower : 'assets/images/flower.jpg',
+                        GarbageTruck : 'assets/images/garbageTruck.jpg',
+                        Glasses : 'assets/images/glasses.jpg',
+                        Pencil : 'assets/images/pencil.jpg',
+                        Plate : 'assets/images/plate.jpg',
+                        Rock : 'assets/images/rock.jpg',
+                        Scissors : 'assets/images/scissors.jpg',
+                        Shovel : 'assets/images/shovel.jpg',
+                        Snow : 'assets/images/snow.jpg'
+};
+
+let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
+let keys = Object.keys(colorImagePaths);
+let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
+let quizPath = colorImagePaths[rightAnswer]; 
+let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
+
+}
+
+function animalQuestions(){
+    console.log("Animal Questions called!!!");
+    let wrongAnswers = ['Cat', 'Dog', 'Lion', 'Elephant', 'Giraffe', 
+    'Cow', 'Chicken', 'Turtle', 'Tortoise', 'Fish'];
+    let questions = ['What animal is this?', 'Do you know this animal?', 'Can you guess this beautiful animal?'];
+    let colorImagePaths = { Cat : 'assets/images/cat.jpg' ,
+                        Dog : 'assets/images/dog.jpg',
+                        Lion : 'assets/images/lion.jpg',
+                        Elephant : 'assets/images/elephant.jpg',
+                        Giraffe : 'assets/images/giraffe.jpg',
+                        Turtle : 'assets/images/turtle.jpg',
+                        Tortoise : 'assets/images/tortoise.jpg',
+                        Fish : 'assets/images/fish.jpg',
+                        Chicken : 'assets/images/chicken.jpg',
+                        Cow : 'assets/images/cow.jpg'
+};
+
+let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
+let keys = Object.keys(colorImagePaths);
+let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
+let quizPath = colorImagePaths[rightAnswer]; 
+let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
+}
+}
+
 
 function selectWrongAnswer(wrongAnswers,rightAnswer){
 
