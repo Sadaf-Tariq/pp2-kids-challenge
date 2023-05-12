@@ -174,7 +174,7 @@ let quizPath = colorImagePaths[rightAnswer];
 let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
 return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
-}
+
 
 
 function selectWrongAnswer(wrongAnswers,rightAnswer){
