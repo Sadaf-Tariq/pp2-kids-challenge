@@ -12,11 +12,37 @@ console.log(obj[randomKey]); */
 /* Start Game after DOM finished loading.. */
 
 document.addEventListener("DOMContentLoaded", function(){
-        runGame();
+    
+        appendImage('assets/images/welcome.jpg');
+        appendQuiz('Are you ready?', 'Yes' , 'No');
+
+        
+    let buttons = document.getElementsByTagName('button');
+    for (let button of buttons){
+        button.addEventListener('click', function(){
+            if (this.innerText === quiz[2].toUpperCase() ){
+                console.log("You are right!!!");
+                incrementScore();
+                document.querySelector('#option1').disabled = true;
+                document.querySelector('#option2').disabled = true;
+            } else if ( this.innerText === ('Start').toUpperCase()){
+                this.innerText = 'Next';
+                runGame();
+            } else {
+                console.log("Your answer is wrong!");
+                decrementScore();
+            }
+            
+        });
+    }   
    
 });
 
 function runGame(){
+
+    document.querySelector('#option1').disabled = false;
+    document.querySelector('#option2').disabled = false;
+
 
     let quizDone =[''];
     let category = getCategory();   
@@ -25,25 +51,6 @@ function runGame(){
     appendQuiz(quiz[0],quiz[2],quiz[3]);
     quizDone.push(quiz[2]);
 
-    let buttons = document.getElementsByTagName('button');
-    for (let button of buttons){
-        button.addEventListener('click', function(){
-            if (this.innerText === quiz[2].toUpperCase() ){
-                let dataType = this.getAttribute("data-type");
-                if  (dataType === "option1"){
-                    document.querySelector('#option2').disabled = true;
-                } else {
-                    document.querySelector('#option1').disabled = true;
-                }
-                console.log("You are right!!!");
-                incrementScore();
-            } else {
-                console.log("Your answer is wrong!");
-                decrementScore();
-            }
-            
-        });
-    }
     console.log(quiz);
     console.log(quizDone);
 }
@@ -66,10 +73,12 @@ function categoryQuestionSelector(category){
         quiz = thingQuestions();
     } else if (category === 'animals'){
         quiz = animalQuestions();
+    }
 
     return quiz;
 
-}
+    }
+
 
 function colorQuestions(){
     console.log("color Questions called!!!");
@@ -109,7 +118,7 @@ function fruitQuestions(){
                         DragonFruit : 'assets/images/dragon-fruit.jpg',
                         Raspberry : 'assets/images/raspberry.jpg',
                         Orange : 'assets/images/orange(2).jpg',
-                        PineApple : 'assets/images/pineApple.jpg',
+                        PineApple : 'assets/images/pine-apple.jpg',
                         Pear : 'assets/images/pear.jpg',
                         Strawberry : 'assets/images/strawberry.jpg'
 };
@@ -130,7 +139,7 @@ function thingQuestions(){
     let questions = ['What thing is this?', 'Do you know this thing?', 'Can you guess this thing?'];
     let colorImagePaths = { Eggs : 'assets/images/Eggs.jpg' ,
                         Flower : 'assets/images/flower.jpg',
-                        GarbageTruck : 'assets/images/garbageTruck.jpg',
+                        GarbageTruck : 'assets/images/garbage-truck.jpg',
                         Glasses : 'assets/images/glasses.jpg',
                         Pencil : 'assets/images/pencil.jpg',
                         Plate : 'assets/images/plate.jpg',
@@ -141,14 +150,18 @@ function thingQuestions(){
 };
 
 let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
+console.log(quizQuestion);
 let keys = Object.keys(colorImagePaths);
 let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
+console.log(rightAnswer);
 let quizPath = colorImagePaths[rightAnswer]; 
+console.log(quizPath);
 let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+console.log(wrongAnswer);
 return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
 
-}
+
 
 function animalQuestions(){
     console.log("Animal Questions called!!!");
@@ -174,7 +187,7 @@ let quizPath = colorImagePaths[rightAnswer];
 let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
 return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
-}
+
 
 
 function selectWrongAnswer(wrongAnswers,rightAnswer){
@@ -188,13 +201,11 @@ function selectWrongAnswer(wrongAnswers,rightAnswer){
     return wrongAnswers[Math.floor(Math.random()*wrongAnswers.length)];
 }
 
+
 function appendImage(pathSrc){
-    let image = document.createElement("img");
-    let imageParent = document.getElementById("question-img");
-    searchPic = new Image(100, 100);
-    searchPic.src = pathSrc;
-    image.src = searchPic.src;            // image.src = "IMAGE URL/PATH"
-    imageParent.appendChild(image);
+    let imageParent = document.getElementsByTagName("img");
+    imageParent[0].src = pathSrc;            // image.src = "IMAGE URL/PATH"
+    
 }
 
 function appendQuiz(question, rightAnswer, wrongAnswer){
@@ -213,14 +224,18 @@ function appendQuiz(question, rightAnswer, wrongAnswer){
 
 function incrementScore() {
 
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = oldScore + 10;
+    console.log('increment score called!');
 
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+    console.log(oldScore);
 }
 
 function decrementScore() {
 
+    console.log('deccrement score called!');
     let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = oldScore - 10;
+    document.getElementById("score").innerText = --oldScore;
+    console.log(oldScore);
 
 }
