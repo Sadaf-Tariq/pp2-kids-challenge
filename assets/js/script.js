@@ -20,6 +20,12 @@ let userName = document.getElementById("name-id");
 let submit = document.getElementById("submit");
 let start = document.getElementById("next");
 let buttons = document.getElementsByTagName('button');
+let qCount = document.getElementById("qCount");
+let congrats = document.getElementById("congrats");
+let winLose = document.getElementById("win-lose");
+let finalScore = document.getElementById("final-score");
+let scorePage = document.getElementById("score-page");
+let score = document.getElementById("score");
 let quiz;
 let colorImagePaths;
 let fruitImagePaths;
@@ -33,7 +39,7 @@ let quizDone =[''];
 document.addEventListener("DOMContentLoaded", function(){
     
     appendImage('assets/images/welcome.jpg');
-    appendQuiz('Are you ready?', 'Yes' , 'No');
+    appendQuiz('Are you ready?', '---' , '---');
 
     
     start.addEventListener('click', runGame);    
@@ -273,27 +279,48 @@ function checkResult(element){
     }
     document.querySelector('#option1').disabled = true;
     document.querySelector('#option2').disabled = true;
-    let qCount = parseInt(document.getElementById("qCount").innerText);
-    document.getElementById("qCount").innerText = ++qCount;
+    incrementQuestion();
 }
 
 
 function incrementScore() {
 
     console.log('increment score called!');
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore ;
+    let oldScore = parseInt(score.innerText);
+    score.innerText = oldScore + 10 ;
     console.log(oldScore);
 }
 
 function decrementScore() {
 
     console.log('deccrement score called!');
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = --oldScore ;
+    let oldScore = parseInt(score.innerText);
+    score.innerText = oldScore - 10 ;
     console.log(oldScore);
  
 
+}
+
+function incrementQuestion(){
+    let count = parseInt(qCount.innerText);
+    qCount.innerText = ++count;
+    if(count === 2){
+        showScorePage();
+    }
+}
+
+function showScorePage() {
+     scorePage.classList.remove('hide');
+     gameArea.classList.add('hide');
+     welcomePlayer.innerText = 'Game Over';
+     let final = parseInt(score.innerText);
+     if (final >= 100){
+        congrats.innerText = `Congratulation ${userName.value} !!!`;
+     } else{
+        congrats.innerText = `Try again ${userName.value}!`;
+        winLose.innerText = "You lose :( !!"
+     }
+     finalScore.innerText = `Your Score: ${final}`;
 }
 
 

@@ -27,13 +27,15 @@
             <button data-type="submit" class="button submit" id = "submit">Submit!</button>
         </div>
 
+        <p class="name max-score" >Maximum Question : 15</p>
+        <p class="name " >Score 100 to win!</p>
         <div id="lp-div"> <p class="name">Let's Play!</p></div>
     </div>
     
     <!-- Game Area -->
     <h1 class ="hide" id="welcome-player">Welcome player!!!</h1>
     <div class="game-area hide" id = "game-area">
-       <p id="turn" >Can you score 100!!</p>
+       
         <!-- Player option -->
         <div>
             <p id="question" class="name">What color is this ?</p>
@@ -43,13 +45,23 @@
         </div> 
 
         <div class="score-area">
-            <p class="scores">Omar's Score: <span id="score">0</span></p>
-            <p class="name" id="next">Start</p>
+            <p class="scores hide">Omar's Score: <span id="score">0</span></p>
+            <p class="name" id="next">Yes!</p>
         </div>
       
         <div id="q-count">
             <p class="scores">Question #: <span id="qCount">0</span></p>
         </div>
+    </div>
+
+    <!-- score page -->
+    <div class=" game-area hide" id="score-page">
+
+        <p class="name player" id="congrats">Congratulations!!!</p>
+        <p class="name player" id="win-lose" >You won!!!</p>
+        <p class="name player" id ="final-score" >Your score: 100</p>
+        <a class="name" href=""><i class="fa-solid fa-house"></i></a>
+
     </div>
     <!-- Font awesome script-->
     <script src="https://kit.fontawesome.com/1f98dc5220.js" crossorigin="anonymous"></script>
