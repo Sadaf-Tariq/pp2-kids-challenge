@@ -10,7 +10,6 @@
 
 
 body{
-    /* background: url("../images/bg.jpg") no-repeat center center; */
     background-color: #FFF9DE;
     color: #4D4D4D;
     text-align: center;
@@ -25,7 +24,7 @@ h1{
 .game-area{
     background-color: rgba(255, 212, 178, 0.5); 
     box-sizing: border-box;
-    margin-top: 10px;
+    margin-top: 2px;
     padding: 1%;
     border-top: #4D4D4D 8px double;
     border-bottom: #4D4D4D 8px double;
@@ -118,7 +117,7 @@ a {
 }
 
 #question{
-    margin-top: 5px;
+    margin-top: 0;
     font-size: 250%;
 }
 
@@ -156,6 +155,11 @@ img{
     font-size: 100%;
 }
 
+#welcome-player{
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
 
 
 /* Media queries */

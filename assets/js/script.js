@@ -1,15 +1,4 @@
-/* var image = document.createElement("img");
-var imageParent = document.getElementById("question-img");
-searchPic = new Image();
-searchPic.src = "assets/images/red.jpg";
-image.src = searchPic.src;            // image.src = "IMAGE URL/PATH"
-imageParent.appendChild(image);
-//
-let randomKey = keys[Math.floor(Math.random()*keys.length)];
-undefined
-console.log(obj[randomKey]); */
-
-/* Start Game after DOM finished loading.. */
+// Extracting elements using IDs from HTML
 
 let welcome = document.getElementById("welcome");
 let welcomeArea = document.getElementById("welcome-area");
@@ -26,6 +15,9 @@ let winLose = document.getElementById("win-lose");
 let finalScore = document.getElementById("final-score");
 let scorePage = document.getElementById("score-page");
 let score = document.getElementById("score");
+
+// Declaring variables 
+
 let quiz;
 let colorImagePaths;
 let fruitImagePaths;
@@ -34,12 +26,7 @@ let animalImagePaths;
 let colorArray =[''], fruitArray=[''], thingArray=[''], animalArray=[''];
 let quizDone =[''];
 
-userName.addEventListener("keydown", function(event){
-    if (event.key === "Enter"){
-        welcomePlayer.innerText = `Welcome ${userName.value} !`;
-        submit.innerText = "Thank you!";
-    }
-});
+// Adding event listeners for events
 
 document.addEventListener("DOMContentLoaded", function(){
     
@@ -51,6 +38,13 @@ document.addEventListener("DOMContentLoaded", function(){
     start.addEventListener('click', runGame);    
 
 }); 
+
+userName.addEventListener("keydown", function(event){
+    if (event.key === "Enter"){
+        welcomePlayer.innerText = `Welcome ${userName.value} !`;
+        submit.innerText = "Thank you!";
+    }
+});
 
 change.addEventListener('click', function(){
     welcome.classList.add('hide');
@@ -65,7 +59,7 @@ submit.addEventListener('click', function(){
 });
 
 
-
+//Adding necessary functions
 
 function runGame(){
 
@@ -76,14 +70,12 @@ function runGame(){
     document.getElementById("option1").style.color = null;
     document.getElementById("option2").style.color= null;
    
- 
     start.innerText = 'Next';
     let category = getCategory();   
     quiz = categoryQuestionSelector(category);
     appendImage(quiz[1]);
     appendQuiz(quiz[0],quiz[2],quiz[3]);
     quizDone.push(quiz[2]);
-    console.log(quizDone);
 }
       
 function getCategory(){
@@ -112,7 +104,7 @@ function categoryQuestionSelector(category){
 
 
 function colorQuestions(){
-    console.log("color Questions called!!!");
+
     let wrongAnswers = ['Red', 'Green', 'Blue', 'Pink', 'Black', 
                     'White', 'Orange', 'Purple', 'Yellow', 'Brown'];
     let questions = ['What color is this?', 'Do you know this color?', 'Can you guess this color?'];
@@ -139,13 +131,12 @@ function colorQuestions(){
     let quizPath = colorImagePaths[rightAnswer];
     let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
     colorArray.push(rightAnswer);
-    console.log(colorArray);
     return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
 
 
 function fruitQuestions(){
-    console.log("Fruit Questions called!!!");
+
     let wrongAnswers = ['Apple', 'Banana', 'Grapes', 'Blueberry', 'DragonFruit', 
     'Raspberry', 'Orange', 'PineApple', 'Pear', 'Strawberry'];
     let questions = ['What delicious fruit is this?', 'Do you know this tasty fruit?', 'Can you guess this healthy fruit?'];
@@ -159,27 +150,24 @@ function fruitQuestions(){
                         PineApple : 'assets/images/pine-apple.jpg',
                         Pear : 'assets/images/pear.jpg',
                         Strawberry : 'assets/images/strawberry.jpg'
-};
-for(arr of fruitArray){
-    if (fruitImagePaths.hasOwnProperty(arr)){
-        delete fruitImagePaths[arr];
+    };
+    for(arr of fruitArray){
+        if (fruitImagePaths.hasOwnProperty(arr)){
+         delete fruitImagePaths[arr];
+     }
     }
-}
-
-
-let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
-let keys = Object.keys(fruitImagePaths);
-let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
-let quizPath = fruitImagePaths[rightAnswer];
-let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
-fruitArray.push(rightAnswer);
-console.log(fruitArray);
-return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
-}
+    let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
+    let keys = Object.keys(fruitImagePaths);
+    let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
+    let quizPath = fruitImagePaths[rightAnswer];
+    let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+    fruitArray.push(rightAnswer);
+    return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
+    }
 
 
 function thingQuestions(){
-    console.log("Things Questions called!!!");
+
     let wrongAnswers = ['Eggs', 'Flower', 'GarbageTruck', 'Glasses', 'Pencil', 
     'Plate', 'Rock', 'Scissors', 'Shovel', 'Snow'];
     let questions = ['What thing is this?', 'Do you know this thing?', 'Can you guess this thing?'];
@@ -193,28 +181,25 @@ function thingQuestions(){
                         Scissors : 'assets/images/scissors.jpg',
                         Shovel : 'assets/images/shovel.jpg',
                         Snow : 'assets/images/snow.jpg'
-};
-for(arr of thingArray){
-    if (thingImagePaths.hasOwnProperty(arr)){
-        delete thingImagePaths[arr];
+    };
+    for(arr of thingArray){
+        if (thingImagePaths.hasOwnProperty(arr)){
+            delete thingImagePaths[arr];
+        }
     }
-}
-
-
-let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
-let keys = Object.keys(thingImagePaths);
-let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
-let quizPath = thingImagePaths[rightAnswer]; 
-let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
-thingArray.push(rightAnswer);
-console.log(thingArray);
-return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
-}
+    let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
+    let keys = Object.keys(thingImagePaths);
+    let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
+    let quizPath = thingImagePaths[rightAnswer]; 
+    let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+    thingArray.push(rightAnswer);
+    return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
+    }
 
 
 
 function animalQuestions(){
-    console.log("Animal Questions called!!!");
+
     let wrongAnswers = ['Cat', 'Dog', 'Lion', 'Elephant', 'Giraffe', 
     'Cow', 'Chicken', 'Turtle', 'Tortoise', 'Fish'];
     let questions = ['What animal is this?', 'Do you know this animal?', 'Can you guess this beautiful animal?'];
@@ -228,25 +213,20 @@ function animalQuestions(){
                         Fish : 'assets/images/fish.jpg',
                         Chicken : 'assets/images/chicken.jpg',
                         Cow : 'assets/images/cow.jpg'
-};
-for(arr of animalArray){
-    if (animalImagePaths.hasOwnProperty(arr)){
-        delete animalImagePaths[arr];
+    };
+    for(arr of animalArray){
+        if (animalImagePaths.hasOwnProperty(arr)){
+            delete animalImagePaths[arr];
+        }
+    }  
+    let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
+    let keys = Object.keys(animalImagePaths);
+    let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
+    let quizPath = animalImagePaths[rightAnswer]; 
+    let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+    animalArray.push(rightAnswer);
+    return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
     }
-}
-
-
-let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
-let keys = Object.keys(animalImagePaths);
-let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
-let quizPath = animalImagePaths[rightAnswer]; 
-let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
-animalArray.push(rightAnswer);
-console.log(animalArray);
-return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
-}
-
-
 
 function selectWrongAnswer(wrongAnswers,rightAnswer){
 
@@ -261,9 +241,9 @@ function selectWrongAnswer(wrongAnswers,rightAnswer){
 
 
 function appendImage(pathSrc){
+
     let imageParent = document.getElementsByTagName("img");
-    imageParent[0].src = pathSrc;            // image.src = "IMAGE URL/PATH"
-    
+    imageParent[0].src = pathSrc;            
 }
 
 function appendQuiz(question, rightAnswer, wrongAnswer){
@@ -282,14 +262,12 @@ function appendQuiz(question, rightAnswer, wrongAnswer){
 
 function checkResult(element){
     if (element.innerText === quiz[2].toUpperCase() ){
-        console.log("You are right!!!");
         incrementScore();
         element.style.backgroundColor = 'green';
         element.innerText = "Correct!";
         element.style.color = "white";
        
     } else  {
-        console.log("Your answer is wrong!");
         decrementScore();
         element.style.backgroundColor = 'red';
         element.innerText = "Wrong!";
@@ -303,26 +281,22 @@ function checkResult(element){
 
 function incrementScore() {
 
-    console.log('increment score called!');
     let oldScore = parseInt(score.innerText);
     score.innerText = oldScore + 10 ;
-    console.log(oldScore);
+    
 }
 
 function decrementScore() {
 
-    console.log('deccrement score called!');
     let oldScore = parseInt(score.innerText);
     score.innerText = oldScore - 10 ;
-    console.log(oldScore);
- 
 
 }
 
 function incrementQuestion(){
     let count = parseInt(qCount.innerText);
     qCount.innerText = ++count;
-    if(count === 2){
+    if(count === 15){
         showScorePage();
     }
 }
