@@ -21,7 +21,12 @@ let submit = document.getElementById("submit");
 let start = document.getElementById("next");
 let buttons = document.getElementsByTagName('button');
 let quiz;
-
+let colorImagePaths;
+let fruitImagePaths;
+let thingImagePaths;
+let animalImagePaths;
+let colorArray =[''], fruitArray=[''], thingArray=[''], animalArray=[''];
+let quizDone =[''];
 
 
 
@@ -55,15 +60,12 @@ function runGame(){
     document.querySelector('#option2').disabled = false;
  
     start.innerText = 'Next';
-    let quizDone =[''];
     let category = getCategory();   
     quiz = categoryQuestionSelector(category);
     appendImage(quiz[1]);
     appendQuiz(quiz[0],quiz[2],quiz[3]);
     quizDone.push(quiz[2]);
-   
-
-
+    console.log(quizDone);
 }
       
 function getCategory(){
@@ -96,7 +98,7 @@ function colorQuestions(){
     let wrongAnswers = ['Red', 'Green', 'Blue', 'Pink', 'Black', 
                     'White', 'Orange', 'Purple', 'Yellow', 'Brown'];
     let questions = ['What color is this?', 'Do you know this color?', 'Can you guess this color?'];
-    let colorImagePaths = { Red : 'assets/images/red.jpg' ,
+    colorImagePaths = { Red : 'assets/images/red.jpg' ,
                  Green : 'assets/images/green.jpg',
                  Blue : 'assets/images/blue.jpg',
                  Pink : 'assets/images/pink.jpg',
@@ -107,12 +109,19 @@ function colorQuestions(){
                  Yellow : 'assets/images/yellow.jpg',
                  Brown : 'assets/images/brown.jpg'
     };
+    for(arr of colorArray){
+        if (colorImagePaths.hasOwnProperty(arr)){
+            delete colorImagePaths[arr];
+        }
+    }
 
     let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
     let keys = Object.keys(colorImagePaths);
     let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
     let quizPath = colorImagePaths[rightAnswer];
     let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+    colorArray.push(rightAnswer);
+    console.log(colorArray);
     return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
 
@@ -122,7 +131,7 @@ function fruitQuestions(){
     let wrongAnswers = ['Apple', 'Banana', 'Grapes', 'Blueberry', 'DragonFruit', 
     'Raspberry', 'Orange', 'PineApple', 'Pear', 'Strawberry'];
     let questions = ['What delicious fruit is this?', 'Do you know this tasty fruit?', 'Can you guess this healthy fruit?'];
-    let colorImagePaths = { Apple : 'assets/images/apple.jpg' ,
+    fruitImagePaths = { Apple : 'assets/images/apple.jpg' ,
                         Banana : 'assets/images/banana.jpg',
                         Grapes : 'assets/images/grapes.jpg',
                         Blueberry : 'assets/images/blueberry.jpg',
@@ -133,12 +142,20 @@ function fruitQuestions(){
                         Pear : 'assets/images/pear.jpg',
                         Strawberry : 'assets/images/strawberry.jpg'
 };
+for(arr of fruitArray){
+    if (fruitImagePaths.hasOwnProperty(arr)){
+        delete fruitImagePaths[arr];
+    }
+}
+
 
 let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
-let keys = Object.keys(colorImagePaths);
+let keys = Object.keys(fruitImagePaths);
 let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
-let quizPath = colorImagePaths[rightAnswer];
+let quizPath = fruitImagePaths[rightAnswer];
 let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+fruitArray.push(rightAnswer);
+console.log(fruitArray);
 return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
 
@@ -148,7 +165,7 @@ function thingQuestions(){
     let wrongAnswers = ['Eggs', 'Flower', 'GarbageTruck', 'Glasses', 'Pencil', 
     'Plate', 'Rock', 'Scissors', 'Shovel', 'Snow'];
     let questions = ['What thing is this?', 'Do you know this thing?', 'Can you guess this thing?'];
-    let colorImagePaths = { Eggs : 'assets/images/Eggs.jpg' ,
+    let thingImagePaths = { Eggs : 'assets/images/Eggs.jpg' ,
                         Flower : 'assets/images/flower.jpg',
                         GarbageTruck : 'assets/images/garbage-truck.jpg',
                         Glasses : 'assets/images/glasses.jpg',
@@ -159,16 +176,20 @@ function thingQuestions(){
                         Shovel : 'assets/images/shovel.jpg',
                         Snow : 'assets/images/snow.jpg'
 };
+for(arr of thingArray){
+    if (thingImagePaths.hasOwnProperty(arr)){
+        delete thingImagePaths[arr];
+    }
+}
+
 
 let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
-console.log(quizQuestion);
-let keys = Object.keys(colorImagePaths);
+let keys = Object.keys(thingImagePaths);
 let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
-console.log(rightAnswer);
-let quizPath = colorImagePaths[rightAnswer]; 
-console.log(quizPath);
+let quizPath = thingImagePaths[rightAnswer]; 
 let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
-console.log(wrongAnswer);
+thingArray.push(rightAnswer);
+console.log(thingArray);
 return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
 
@@ -179,7 +200,7 @@ function animalQuestions(){
     let wrongAnswers = ['Cat', 'Dog', 'Lion', 'Elephant', 'Giraffe', 
     'Cow', 'Chicken', 'Turtle', 'Tortoise', 'Fish'];
     let questions = ['What animal is this?', 'Do you know this animal?', 'Can you guess this beautiful animal?'];
-    let colorImagePaths = { Cat : 'assets/images/cat.jpg' ,
+    animalImagePaths = { Cat : 'assets/images/cat.jpg' ,
                         Dog : 'assets/images/dog.jpg',
                         Lion : 'assets/images/lion.jpg',
                         Elephant : 'assets/images/elephant.jpg',
@@ -190,12 +211,20 @@ function animalQuestions(){
                         Chicken : 'assets/images/chicken.jpg',
                         Cow : 'assets/images/cow.jpg'
 };
+for(arr of animalArray){
+    if (animalImagePaths.hasOwnProperty(arr)){
+        delete animalImagePaths[arr];
+    }
+}
+
 
 let quizQuestion = questions[Math.floor(Math.random()*questions.length)];
-let keys = Object.keys(colorImagePaths);
+let keys = Object.keys(animalImagePaths);
 let rightAnswer = keys[Math.floor(Math.random()*keys.length)];
-let quizPath = colorImagePaths[rightAnswer]; 
+let quizPath = animalImagePaths[rightAnswer]; 
 let wrongAnswer = selectWrongAnswer(wrongAnswers,rightAnswer);
+animalArray.push(rightAnswer);
+console.log(animalArray);
 return [quizQuestion, quizPath, rightAnswer,wrongAnswer];
 }
 
