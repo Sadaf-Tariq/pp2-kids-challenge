@@ -34,14 +34,20 @@ let animalImagePaths;
 let colorArray =[''], fruitArray=[''], thingArray=[''], animalArray=[''];
 let quizDone =[''];
 
-
+userName.addEventListener("keydown", function(event){
+    if (event.key === "Enter"){
+        welcomePlayer.innerText = `Welcome ${userName.value} !`;
+        submit.innerText = "Thank you!";
+    }
+});
 
 document.addEventListener("DOMContentLoaded", function(){
     
     appendImage('assets/images/welcome.jpg');
     appendQuiz('Are you ready?', '---' , '---');
 
-    
+    userName.focus();
+
     start.addEventListener('click', runGame);    
 
 }); 
@@ -55,6 +61,7 @@ change.addEventListener('click', function(){
 
 submit.addEventListener('click', function(){
     welcomePlayer.innerText = `Welcome ${userName.value} !`;
+    submit.innerText = "Thank you!";
 });
 
 
@@ -64,6 +71,11 @@ function runGame(){
 
     document.querySelector('#option1').disabled = false;
     document.querySelector('#option2').disabled = false;
+    document.getElementById("option1").style.backgroundColor = null;
+    document.getElementById("option2").style.backgroundColor = null;
+    document.getElementById("option1").style.color = null;
+    document.getElementById("option2").style.color= null;
+   
  
     start.innerText = 'Next';
     let category = getCategory();   
@@ -272,10 +284,16 @@ function checkResult(element){
     if (element.innerText === quiz[2].toUpperCase() ){
         console.log("You are right!!!");
         incrementScore();
+        element.style.backgroundColor = 'green';
+        element.innerText = "Correct!";
+        element.style.color = "white";
        
     } else  {
         console.log("Your answer is wrong!");
         decrementScore();
+        element.style.backgroundColor = 'red';
+        element.innerText = "Wrong!";
+        element.style.color = "white";
     }
     document.querySelector('#option1').disabled = true;
     document.querySelector('#option2').disabled = true;
