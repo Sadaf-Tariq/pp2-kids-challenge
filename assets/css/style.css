@@ -27,7 +27,9 @@ h1{
     box-sizing: border-box;
     margin-top: 10px;
     padding: 1%;
-    border-radius: 2%;}
+    border-top: #4D4D4D 8px double;
+    border-bottom: #4D4D4D 8px double;
+}
 
 .name-area{
     margin: auto;
@@ -158,7 +160,7 @@ img{
 
 /* Media queries */
 
-@media (max-width: 850px) {
+@media (max-width: 890px) {
     h1{
         font-size: 300%;
     }
@@ -176,7 +178,7 @@ img{
     }
 
     .scores {
-        margin: 30px 40px 0 40px;
+        margin: 0 40px 0 40px;
         letter-spacing: 1px;
         font-size: 90%;
     }
@@ -184,7 +186,10 @@ img{
     body{
         background-size: cover;
     }
-    
+    #lp-div{
+        margin-top: 40px;
+        width: 35%;
+    }
 }
 
 @media (max-width: 570px) {
@@ -193,7 +198,7 @@ img{
     }
 
     .name{
-        font-size: 150%;
+        font-size: 130%;
     }
 
     .player{ 
@@ -203,6 +208,13 @@ img{
     .button{
         font-size: 55%;
     }
+
+    img{
+        height: 300px;
+        width: 360px;
+    }
+
+    
     
     
 }
@@ -211,5 +223,12 @@ img{
     
     .button{
         font-size: 30%;
+    }
+}
+@media (max-width: 370px) {
+    
+    img{
+        height: 230px;
+        width: 290px;
     }
 }
