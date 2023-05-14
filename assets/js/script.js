@@ -24,7 +24,6 @@ let option2 = document.getElementById("option2");
 let quiz;
 let colorImagePaths;
 let fruitImagePaths;
-let Swal;
 let animalImagePaths;
 let colorArray =[''], fruitArray=[''], thingArray=[''], animalArray=[''];
 let quizDone =[''];
@@ -66,10 +65,15 @@ next.addEventListener('click',function(){
     } else { 
         Swal.fire(
             'You forgot to answer the question!!!.',
-        );
+        )
     }
 });
-
+ 
+showAlert.click(function(){
+    Swal.fire(
+        'This is a customized alert box.',
+    )
+});
 
 //Adding necessary functions
 
