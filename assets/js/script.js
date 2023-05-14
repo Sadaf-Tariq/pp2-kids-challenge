@@ -15,6 +15,9 @@ let winLose = document.getElementById("win-lose");
 let finalScore = document.getElementById("final-score");
 let scorePage = document.getElementById("score-page");
 let score = document.getElementById("score");
+let que = document.getElementById("question");
+let option1 = document.getElementById("option1");
+let option2 = document.getElementById("option2");
 
 // Declaring variables 
 
@@ -86,7 +89,6 @@ function getCategory(){
 
 function categoryQuestionSelector(category){
     
-    let quiz;
 
     if (category === 'colors'){
         quiz = colorQuestions();
@@ -119,7 +121,7 @@ function colorQuestions(){
                  Yellow : 'assets/images/yellow.jpg',
                  Brown : 'assets/images/brown.jpg'
     };
-    for(arr of colorArray){
+    for(let arr of colorArray){
         if (colorImagePaths.hasOwnProperty(arr)){
             delete colorImagePaths[arr];
         }
@@ -151,7 +153,7 @@ function fruitQuestions(){
                         Pear : 'assets/images/pear.jpg',
                         Strawberry : 'assets/images/strawberry.jpg'
     };
-    for(arr of fruitArray){
+    for(let arr of fruitArray){
         if (fruitImagePaths.hasOwnProperty(arr)){
          delete fruitImagePaths[arr];
      }
@@ -182,7 +184,7 @@ function thingQuestions(){
                         Shovel : 'assets/images/shovel.jpg',
                         Snow : 'assets/images/snow.jpg'
     };
-    for(arr of thingArray){
+    for(let arr of thingArray){
         if (thingImagePaths.hasOwnProperty(arr)){
             delete thingImagePaths[arr];
         }
@@ -214,7 +216,7 @@ function animalQuestions(){
                         Chicken : 'assets/images/chicken.jpg',
                         Cow : 'assets/images/cow.jpg'
     };
-    for(arr of animalArray){
+    for(let arr of animalArray){
         if (animalImagePaths.hasOwnProperty(arr)){
             delete animalImagePaths[arr];
         }
@@ -248,9 +250,6 @@ function appendImage(pathSrc){
 
 function appendQuiz(question, rightAnswer, wrongAnswer){
 
-    let que = document.getElementById("question");
-    let option1 = document.getElementById("option1");
-    let option2 = document.getElementById("option2");
     que.innerText = question;
     let options = [rightAnswer, wrongAnswer];
     let num = Math.floor(Math.random()*options.length);
@@ -268,7 +267,6 @@ function checkResult(element){
         element.style.color = "white";
        
     } else  {
-        decrementScore();
         element.style.backgroundColor = 'red';
         element.innerText = "Wrong!";
         element.style.color = "white";
@@ -282,21 +280,17 @@ function checkResult(element){
 function incrementScore() {
 
     let oldScore = parseInt(score.innerText);
-    score.innerText = oldScore + 10 ;
+    let addScore = oldScore + 10
+    score.innerText = addScore ;
+    console.log(addScore);
     
 }
 
-function decrementScore() {
-
-    let oldScore = parseInt(score.innerText);
-    score.innerText = oldScore - 10 ;
-
-}
 
 function incrementQuestion(){
     let count = parseInt(qCount.innerText);
     qCount.innerText = ++count;
-    if(count === 15){
+    if(count === 40){
         showScorePage();
     }
 }
