@@ -84,6 +84,7 @@ function runGame(){
     document.getElementById("option1").style.backgroundColor = null;
     document.getElementById("option2").style.backgroundColor = null;
     document.getElementById("option1").style.color = null;
+    document.getElementById("option2").style.color = null;
    
     next.classList.remove('hide');
     start.classList.add('hide');
