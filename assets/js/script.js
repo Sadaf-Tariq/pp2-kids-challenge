@@ -290,7 +290,7 @@ function incrementScore() {
 function incrementQuestion(){
     let count = parseInt(qCount.innerText);
     qCount.innerText = ++count;
-    if(count === 40){
+    if(count === 15){
         showScorePage();
     }
 }
