@@ -7,8 +7,8 @@ let welcomePlayer = document.getElementById("welcome-player");
 let change = document.getElementById("lp-div");
 let userName = document.getElementById("name-id");
 let submit = document.getElementById("submit");
-let start = document.getElementById("next");
-let buttons = document.getElementsByTagName('button');
+let start = document.getElementById("yes");
+let next = document.getElementById("next");
 let qCount = document.getElementById("qCount");
 let congrats = document.getElementById("congrats");
 let winLose = document.getElementById("win-lose");
@@ -24,10 +24,12 @@ let option2 = document.getElementById("option2");
 let quiz;
 let colorImagePaths;
 let fruitImagePaths;
-let thingImagePaths;
+let Swal;
 let animalImagePaths;
 let colorArray =[''], fruitArray=[''], thingArray=[''], animalArray=[''];
 let quizDone =[''];
+let count = parseInt(qCount.innerText);
+let flag = 0; 
 
 // Adding event listeners for events
 
@@ -35,11 +37,8 @@ document.addEventListener("DOMContentLoaded", function(){
     
     appendImage('assets/images/welcome.jpg');
     appendQuiz('Are you ready?', '---' , '---');
-
     userName.focus();
-
-    start.addEventListener('click', runGame);    
-
+    start.addEventListener('click', runGame);  
 }); 
 
 userName.addEventListener("keydown", function(event){
@@ -61,24 +60,36 @@ submit.addEventListener('click', function(){
     submit.innerText = "Thank you!";
 });
 
+next.addEventListener('click',function(){
+    if(flag === 1){
+        runGame();
+    } else { 
+        Swal.fire(
+            'You forgot to answer the question!!!.',
+        );
+    }
+});
+
 
 //Adding necessary functions
 
 function runGame(){
-
+    flag = 0;
     document.querySelector('#option1').disabled = false;
     document.querySelector('#option2').disabled = false;
     document.getElementById("option1").style.backgroundColor = null;
     document.getElementById("option2").style.backgroundColor = null;
     document.getElementById("option1").style.color = null;
-    document.getElementById("option2").style.color= null;
    
-    start.innerText = 'Next';
+    next.classList.remove('hide');
+    start.classList.add('hide');
+
     let category = getCategory();   
     quiz = categoryQuestionSelector(category);
     appendImage(quiz[1]);
     appendQuiz(quiz[0],quiz[2],quiz[3]);
     quizDone.push(quiz[2]);
+    incrementQuestion();
 }
       
 function getCategory(){
@@ -260,6 +271,7 @@ function appendQuiz(question, rightAnswer, wrongAnswer){
 
 
 function checkResult(element){
+    flag = 1;
     if (element.innerText === quiz[2].toUpperCase() ){
         incrementScore();
         element.style.backgroundColor = 'green';
@@ -273,14 +285,14 @@ function checkResult(element){
     }
     document.querySelector('#option1').disabled = true;
     document.querySelector('#option2').disabled = true;
-    incrementQuestion();
+
 }
 
 
 function incrementScore() {
 
     let oldScore = parseInt(score.innerText);
-    let addScore = oldScore + 10
+    let addScore = oldScore + 10;
     score.innerText = addScore ;
     console.log(addScore);
     
@@ -288,9 +300,8 @@ function incrementScore() {
 
 
 function incrementQuestion(){
-    let count = parseInt(qCount.innerText);
     qCount.innerText = ++count;
-    if(count === 15){
+    if(count === 16){
         showScorePage();
     }
 }
@@ -304,7 +315,7 @@ function showScorePage() {
         congrats.innerText = `Congratulation ${userName.value} !!!`;
      } else{
         congrats.innerText = `Try again ${userName.value}!`;
-        winLose.innerText = "You lose :( !!"
+        winLose.innerText = "You lose :( !!";
      }
      finalScore.innerText = `Your Score: ${final}`;
 }

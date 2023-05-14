@@ -47,10 +47,20 @@ h1{
     font-size: 200%;
 }
 
+#showAlert{
+    padding: 15px;
+    text-align: center;
+}
+
 #next:hover{
     color: black;
     cursor: pointer;   
 } 
+
+#yes:hover{
+    color : black;
+    cursor: pointer;
+}
 
 #name-id{
     width: 20%;
