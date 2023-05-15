@@ -20,29 +20,29 @@ Users of this game will be able to easily navigate throughout the game. This gam
 # Features
 * The Welcome section
 
-  * The welcome section is the first section which interacts with the user
+  * The welcome section is the first section that interacts with the user
   
-  * The welcom section has the game name and information about the game
+  * The welcome section has the game name and information about the game
 
   * The welcome section also asks user name to interact with the user
 
     ![Header Image](/images/welcome-page.png)
     
-  * To increase interactivity, this section gives alert if the username is not entered
+  * To increase interactivity, this section gives an alert if the username is not entered
 
-  * The submit button and Let's play button both gives an alert if user wants to start the game without entering the name
+  * The submit button and Let's play button both give an alert if the user wants to start the game without entering the name
   
   ![welcome-section-usernameAlert1](/images/username-alert.png)
   ![welcome-section-usernameAlert2](/images/username-alert2.png)
   
-  * When the username is enterd the submit button turns to "Thank you!", making the section more interactive
+  * When the username is entered the submit button turns to "Thank you!", making the section more interactive
   
   ![Username-input](/images/Name-input.png)
   
 
 * Getting - ready
 
-  * This game is designed for kid, to give them as sense of challenge, a getting ready section is made
+  * This game is designed for kids, to give them a sense of challenge, a getting ready section is made
 
   * This section asks the user if they are ready or not, to make them ready to enter into the challenge
 
@@ -50,17 +50,17 @@ Users of this game will be able to easily navigate throughout the game. This gam
 
 * The Game-section
 
-  * This is the main game section where the user is given a question, an image and two options
+  * This is the main game section where the user is given a question, an image, and two options
 
-  * The image can be an animal, a fruit, any color or any random thing
+  * The image can be an animal, a fruit, any color, or any random thing
 
   * There will be one right and one wrong option
   
   ![Main image and banner](/images/game-page.png)
 
-  * There is a "Next" button which tells the user if they are ready to move to the next question
+  * There is a "Next" button that tells the user if they are ready to move to the next question
 
-  * This button gives an alert if user wants to move to next question withour choosing an option
+  * This button gives an alert if the user wants to move to the next question without choosing an option
   
   ![Alert for question](/images/alert.png)
   
@@ -69,9 +69,9 @@ Users of this game will be able to easily navigate throughout the game. This gam
   ![Correct Answer](/images/correct-answer.png)
   ![Wrong Answer](/images/wrong-answer.png)
   
-  * There are 15 questions user will answer, on the 15th question , instead of question number, a string 'Last Question!' is displayed
+  * There are 15 questions the user will answer, on the 15th question, instead of the question number, a string 'Last Question!' is displayed
 
-  * This awares the user that this is the last quesiton
+  * This aware the user that this is the last question
   
   ![Last question](/images/last-que.png)
 
@@ -107,17 +107,17 @@ Users of this game will be able to easily navigate throughout the game. This gam
 
 <img src="/images/responsive2.png"  width="750" height="500"> <img src="/images/responsive1.png"  width="300" height="500"> 
 
-* I confirm that all the section of the game are all readable and easy to understand
+* I confirm that all the section of the game are readable and easy to understand
 
 # Bugs
-* When I tested my HTML code for the index.html page on html validator, I got the error that I did not include alt for the image element.
+* When I tested my HTML code for the index.html page on html validator, I got the error that I did not include alt text for the image element.
 * I fixed the error by including an alt text
 
 # Unfixed Bugs
 There is no unfixed bugs but there are warnings indicated by JShint validator:
 - 'Trailing comma in arguments lists' is only available in ES8
 - There is one unused checkResult function indicated by jshint, which was used from html through onclick attribute
-- I used sweetalert2 using jquery ,the syntax is right byt the warning came from jshint for semicolons and undefined variable
+- I used sweetalert2 using jquery ,the syntax is right but the warning came from jshint for semicolons and undefined variable
 ![JShint Image](/images/JShint.png)
 
 # Validator Testing
@@ -148,7 +148,7 @@ The live link can be found here - [here](https://sadaf-tariq.github.io/pp2-kids-
 
 # Credits
 * Content
-  * [Font awesome](https://fontawesome.com/) provided the icon for home for the score section
+  * [Font awesome](https://fontawesome.com/) provided the icon of home for the score section
   * [w3schools](https://www.w3schools.com/) helped me to use classLists
   * [Alvarotrigo](https://alvarotrigo.com/blog/disable-button-javascript/) helped me to disable option buttons
   * [StackOverflow](www.stackoverflow.com) helped me to adjust the image for each question
@@ -156,7 +156,7 @@ The live link can be found here - [here](https://sadaf-tariq.github.io/pp2-kids-
   * I took the code from [LinuxHint](https://linuxhint.com/create-custom-alert-box-javascript/) for the customize alert box
   * [CodePen](https://codepen.io/whisoer/pen/oMxYQg) helped me to change the button color of sweetAlert2
   * Code Institute tutor support helped me to solve errors and gave tips for html page(https://github.com/HollyT85/QuizProject2). Thanks to **Holly** 
-  * [w3schools](https://www.w3schools.com/), [StackOverflow](www.stackoverflow.com),  and Code Institute's walkthrough project [Love Maths](https://github.com/Sadaf-Tariq/love-math) helped me so much throughout my project
+  * [w3schools](https://www.w3schools.com/), [StackOverflow](www.stackoverflow.com),  and Code Institute's walkthrough project [Love Maths](https://github.com/Sadaf-  Tariq/love-math) helped me so much throughout my project
 
 * Media
   * The images used in the website were taken from [Pexels](https://www.pexels.com/)
