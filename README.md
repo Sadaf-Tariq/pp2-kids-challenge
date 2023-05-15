@@ -78,59 +78,20 @@ Users of this game will be able to easily navigate throughout the game. This gam
 
     
 
-* The Kitchen
+* The Score section
 
-  * This section of the page contains a brief description of what happens inside the kitchen to make the user feel trusted
+  * This section comes at the end when all the questions are answered
 
-    ![The kitchen](/images/kitchen.png)
+  * The seciton tells the user if they have won or lose with the total scores
 
-* The Highlight
+  * There is a home icon present at the end of the section, it takes the user to the main section when pressed
 
-  * The highlight section gives the detail of everything DESI's specialty, this section ensures that the user do not loose their interest
+  * The user can start to play again by going back to the main section
 
-    ![our speciality](/images/highlight.png)
+    ![Game won](/images/game-won.png)
+    ![Game Lose](/images/game-lost.png)
 
-* The Footer
 
-  * The footer section encourages the user to keep in contact and provides a phone number, and street address where they can be found
-
-  * The footer section also includes social media icons so that users can find the catering service on Facebook, Twitter, Youtube, and Instagram
-
-  * The  contact information on the footer section is valuable to users as it helps them to find or contact them if they need to
-
-    ![The footer](/images/footer.png)
-
-* Menu Page
-
-  * The menu link on the navigation bar links the age to the Menu page, where a detailed menu is available for users to help them to find the right desi food they want to order for their important event
-
-  * It is the most important premise of the website as the majority of the users will be interested in this page hence why there is a separate page dedicated to this section and made in detail with a beautiful food background with the white font to ease accessibility
-
-    ![The menu](/images/menu.png)
-
-​    
-
-* The Gallery
-
-  * The gallery link on the navigation bar takes the user to the gallery page where there are images available for the users 
-
-  * The gallery images of food served by everything DESI and their catering service give a clear picture to users to make an informed decision
-
-    ![The gallery](/images/gallery.png)
-
-* The Contact-us Page
-
-  * The contact-us link on the navigation bar takes the user to the Contact us page, which consists of two sections. The contact section encourages the user to keep in contact and provides a phone number, email address, and street address where they can be found
-
-  * It also includes information about its opening to help the users to know when they should be contacted
-
-  * The enquiry section has a form for the users to give all the relevant information about the enquiry they want to make. This form feature establishes a connection between the user and the site
-
-    ![The contact us page](/images/contact.png)
-
-  * When the user presses the submit with all the information, they are taken to a Thank you window, further, emphasizing interaction 
-
-    ![Thank you window](/images/thankyou.png)
 # Technologies Used
 
 #### Languages Used
@@ -141,55 +102,61 @@ Users of this game will be able to easily navigate throughout the game. This gam
 
 # Testing
 
-* I tested the website on different browsers such as Microsoft Edge, Opera, Firefox, Chrome, and Safari and it works on all browser
+* I tested this game on different browsers such as Microsoft Edge, Opera, Firefox, Chrome, and Safari and it works on all browser
 * I confirm that this project is responsive, functions on all standard screen sizes, tested responsiveness using the developer tools, and looks good 
 
-<img src="/images/responsive(1).png"  width="750" height="500"> <img src="/images/responsive(2).png"  width="300" height="500"> <img src="/images/responsive(3).png"  width="500" height="700">
+<img src="/images/responsive2.png"  width="750" height="500"> <img src="/images/responsive1.png"  width="300" height="500"> 
 
-* I confirm that the header, navigation bar, highlights, footer, menu, and form text are all readable and easy to understand
-* I have confirmed that the form works: requires entries in every field, will only accept emails in an email field, and the submit button works
+* I confirm that all the section of the game are all readable and easy to understand
 
 # Bugs
-* When I tested my HTML code for the index.html page on html validator, I got the error that one of the div element was unclosed which was causing another section to give another error, I solved the problem by removing that div element
-* Another error I found for the menu.html page, where I put an anchor element inside a button element, I solved that error by replacing the button to form 
-* For the style.css for the header element in a media query, I got an error because there was a margin selector that had a negative value, I solved that error by removing that selector
+* When I tested my HTML code for the index.html page on html validator, I got the error that I did not include alt for the image element.
+* I fixed the error by including an alt text
 
 # Unfixed Bugs
-There is no unfixed bugs but there is a warning indicated by html validator for gallery.html page of the website, for my design I do not need any header for this section of the page that is why this warning was not entertained
-![Warning Image](/images/warning.png)
+There is no unfixed bugs but there are warnings indicated by JShint validator:
+- 'Trailing comma in arguments lists' is only available in ES8
+- There is one unused checkResult function indicated by jshint, which was used from html through onclick attribute
+- I used sweetalert2 using jquery ,the syntax is right byt the warning came from jshint for semicolons and undefined variable
+![JShint Image](/images/JShint.png)
 
 # Validator Testing
 * HTML
   * No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
+  ![HTMLvalidator Image](/images/HTMLvalidator.png)
 * CSS
   * No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
+  ![CSSvalidator Image](/images/CSSvalidator.png)
 * JShint
-  * No errors were found when passing through the official [JShint validator](https://jshint.com/)
+  * Warnings were found when passing through the official [JShint validator](https://jshint.com/)
+  * Discussed in [Unfixed bugs](#Unfixed-Bugs)
 * Accessibility
   * I confirmed that the colors and fonts chosen are easy to read and accessible by running it through lighthouse in developer tools
-
     ![Lighthouse report](/images/lighthouse.png)
+  * I also conducted a speed test at GTMetrix which produced positive results. 
+    ![GMetrix report](/images/GMetrix.png)
+  * The colours on my website passed accessibility tests at a11y
+    ![Contrast report](/images/a11y.png)
 
 # Deployment
 - The site was deployed to GitHub pages. The steps to deploy are as follows:
   - In the GitHub repository, navigate to the Settings tab
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+  - From the source section drop-down menu, select the Main Branch
+  - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found here - [https://sadaf-tariq.github.io/pp2-kids-challenge/](https://sadaf-tariq.github.io/pp2-kids-challenge/)
+The live link can be found here - [here](https://sadaf-tariq.github.io/pp2-kids-challenge/)
 
 # Credits
 * Content
-  * [Font awesome](https://fontawesome.com/) provided the icon for my header and cover text on the hero-image element
-  * [w3schools](https://www.w3schools.com/) helped me in creating my form
-  * [w3schools](https://www.w3schools.com/) helped me in creating my button for the menu page
-  * [StackOverflow](www.stackoverflow.com) helped me to create a custom bottom border on the speciality section heading
-  * [StackOverflow](www.stackoverflow.com) helped me to remove the error I was getting for an anchor element inside the button element
-  * The code for the social media link for the footer was taken from Code Institute [Love Running](https://github.com/Sadaf-Tariq/love-running/blob/main/index.html) project
-  * The text for the home page was taken from [Wikipedia](www.wikipedia .com) and some open-source sites
-  * The logo image for the website was taken from [Wix](www.wix.com)
-  * I got the inspiration for the website from Zouq restaurant, Koyla restaurant, and David Smyth Catering
-  * [w3schools](https://www.w3schools.com/), [StackOverflow](www.stackoverflow.com),  and Code Institute's walkthrough project [Love Running](https://github.com/Sadaf-Tariq/love-running) helped me so much throughout my project
+  * [Font awesome](https://fontawesome.com/) provided the icon for home for the score section
+  * [w3schools](https://www.w3schools.com/) helped me to use classLists
+  * [Alvarotrigo](https://alvarotrigo.com/blog/disable-button-javascript/) helped me to disable option buttons
+  * [StackOverflow](www.stackoverflow.com) helped me to adjust the image for each question
+  * [StackOverflow](www.stackoverflow.com) helped me reverse css in JavaScript
+  * I took the code from [LinuxHint](https://linuxhint.com/create-custom-alert-box-javascript/) for the customize alert box
+  * [CodePen](https://codepen.io/whisoer/pen/oMxYQg) helped me to change the button color of sweetAlert2
+  * Code Institute tutor support helped me to solve errors and gave tips for html page(https://github.com/HollyT85/QuizProject2). Thanks to **Holly** 
+  * [w3schools](https://www.w3schools.com/), [StackOverflow](www.stackoverflow.com),  and Code Institute's walkthrough project [Love Maths](https://github.com/Sadaf-Tariq/love-math) helped me so much throughout my project
 
 * Media
   * The images used in the website were taken from [Pexels](https://www.pexels.com/)
