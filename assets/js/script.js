@@ -21,6 +21,7 @@ let option2 = document.getElementById("option2");
 let question = document.getElementById("question#");
 let lastQue = document.getElementById("lastque");
 
+
 // Declaring variables 
 
 let quiz;
@@ -38,6 +39,8 @@ document.addEventListener("DOMContentLoaded", function(){
     
     appendImage('assets/images/welcome.jpg');
     appendQuiz('Are you ready?', '---' , '---');
+    option1.disabled = true;
+    option2.disabled = true;
     userName.focus();
     start.addEventListener('click', runGame);  
 }); 
@@ -46,7 +49,6 @@ userName.addEventListener("keydown", function(event){
     if (event.key === "Enter"){
         welcomePlayer.innerText = `Welcome ${userName.value} !`;
         submit.innerText = "Thank you!";
-        console.log(userName.value);
     }
 });
 submit.addEventListener('click', function(){
@@ -54,8 +56,7 @@ submit.addEventListener('click', function(){
         Swal.fire('Enter Username:')
     }else{
     welcomePlayer.innerText = `Welcome ${userName.value} !`;
-    submit.innerText = "Thank you!";
-    console.log(userName.value);}
+    submit.innerText = "Thank you!";}
 });
 
 change.addEventListener('click', function(){
@@ -68,7 +69,6 @@ change.addEventListener('click', function(){
     gameArea.classList.remove('hide');
     }
 });
-
 
 next.addEventListener('click',function(){
     if(flag === 1){
@@ -90,12 +90,12 @@ showAlert.click(function(){
 
 function runGame(){
     flag = 0;
-    document.querySelector('#option1').disabled = false;
-    document.querySelector('#option2').disabled = false;
-    document.getElementById("option1").style.backgroundColor = null;
-    document.getElementById("option2").style.backgroundColor = null;
-    document.getElementById("option1").style.color = null;
-    document.getElementById("option2").style.color = null;
+    option1.disabled = false;
+    option2.disabled = false;
+    option1.style.backgroundColor = null;
+    option2.style.backgroundColor = null;
+    option1.style.color = null;
+    option2.style.color = null;
    
     next.classList.remove('hide');
     start.classList.add('hide');
