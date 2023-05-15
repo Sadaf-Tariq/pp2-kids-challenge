@@ -11,22 +11,30 @@
 9. [Credits](#Credits)
 
 # About Kids-Challenge
-The everything DESI website is a catering website for anyone who loves desi food. When deciding on a topic for the project. I wanted to do something I am passionate about. I love desi food and I love to cook, and catering service is something I want to do in the future so I concluded to do a catering website. The website offers spicy, rich, flavourful, and diverse desi cuisine.
+The Kids-Challenge game is a quiz for kids who love challenges. When deciding on a topic for the project. I wanted to do something my kid loves. My 4-year-old loves this quiz challenge, he is curious about everything and asks questions a lot, when I learned JavaScript, I wanted to make a quiz game for my son, which can be easy for kids of this age range and fun at the same time.
 
-Users of this website will be able to find all the information they need to know about everything DESI website: About the kitchen, specialty, full menu, the service gallery, contact information, and an enquiry form. This site is targeted towards people who love to eat desi food and wants a reliable catering service to cater their events.
+Users of this game will be able to easily navigate throughout the game. This game is fully interactive and gives feedback and alerts at every step to guide the users. This site is targeted toward kids who love challenges and fun.
 
-![Responsive image](/images/amiresponsive.png)
+![Responsive image](/images/amIresponsive.png)
 
 # Features
-* The Header
+* The Welcome section
 
-  * Featured at the top of the page, the header shows the logo of the website at the right of the right corner: everything DESI that links to the home page
+  * The welcome section is the first section which interacts with the user
+  
+  * The welcom section has the game name and information about the game
 
-  * The logo image is present at the left corner of the header that also links to the home page
+  * The welcome section also asks user name to interact with the user
 
-  * The header clearly shows the name of the website with a font easy to understand and a color that contrasts with the background
+    ![Header Image](/images/welcome-page.png)
+    
+  * To increase interactivity, this section gives alert if the username is not entered
 
-    ![Header Image](/images/header.png)
+  * The submit button and Let's play button both gives an alert if user wants to start the game without entering the name
+  
+  ![welcome-section-usernameAlert1](/images/username-alert.png)
+  ![welcome-section-usernameAlert2](/images/username-alert2.png)
+  
 
 * Navigation
 
