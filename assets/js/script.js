@@ -44,20 +44,29 @@ userName.addEventListener("keydown", function(event){
     if (event.key === "Enter"){
         welcomePlayer.innerText = `Welcome ${userName.value} !`;
         submit.innerText = "Thank you!";
+        console.log(userName.value);
     }
+});
+submit.addEventListener('click', function(){
+    if (userName.value === ''){
+        Swal.fire('Enter Username:')
+    }else{
+    welcomePlayer.innerText = `Welcome ${userName.value} !`;
+    submit.innerText = "Thank you!";
+    console.log(userName.value);}
 });
 
 change.addEventListener('click', function(){
+    if (userName.value === ''){
+        Swal.fire('Enter Username to proceed')
+    }else{
     welcome.classList.add('hide');
     welcomeArea.classList.add('hide');
     welcomePlayer.classList.remove('hide');
     gameArea.classList.remove('hide');
+    }
 });
 
-submit.addEventListener('click', function(){
-    welcomePlayer.innerText = `Welcome ${userName.value} !`;
-    submit.innerText = "Thank you!";
-});
 
 next.addEventListener('click',function(){
     if(flag === 1){
