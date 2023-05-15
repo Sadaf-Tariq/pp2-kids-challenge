@@ -35,26 +35,48 @@ Users of this game will be able to easily navigate throughout the game. This gam
   ![welcome-section-usernameAlert1](/images/username-alert.png)
   ![welcome-section-usernameAlert2](/images/username-alert2.png)
   
+  * When the username is enterd the submit button turns to "Thank you!", making the section more interactive
+  
+  ![Username-input](/images/Name-input.png)
+  
 
-* Navigation
+* Getting - ready
 
-  * Featured after the header, it contains the navigation links for the website present at the center of the navigation bar
+  * This game is designed for kid, to give them as sense of challenge, a getting ready section is made
 
-  * The navigation links are: Home, Menu, Gallery and contact us that links to the different pages of the website
+  * This section asks the user if they are ready or not, to make them ready to enter into the challenge
 
-  * The navigation links make it easy for the user to find the different pages of the website and use the same color theme but different font
+    ![Getting-ready](/images/getting-ready.png)
 
-    ![Navigation Bar](/images/navigationbar.png)
+* The Game-section
 
-* Main Image and Banner
+  * This is the main game section where the user is given a question, an image and two options
 
-  * This section of the page provides us with a delicate photograph of biryani in a dish, surrounded by spices. The image with an eyecatching animation lets the user envision that the goal of the website is desi food industry oriented
+  * The image can be an animal, a fruit, any color or any random thing
 
-  * The main image also contains a banner with a semi-transparent background of the same color theme
+  * There will be one right and one wrong option
+  
+  ![Main image and banner](/images/game-page.png)
 
-  * The cover image on the banner sums up the tone and premise of the website and strengthens the User's memory of the brand itself
+  * There is a "Next" button which tells the user if they are ready to move to the next question
 
-    ![Main image and banner](/images/main-image.png)
+  * This button gives an alert if user wants to move to next question withour choosing an option
+  
+  ![Alert for question](/images/alert.png)
+  
+  * To increase interactivity, the options give feedback for the correct and wrong answers
+  
+  ![Correct Answer](/images/correct-answer.png)
+  ![Wrong Answer](/images/wrong-answer.png)
+  
+  * There are 15 questions user will answer, on the 15th question , instead of question number, a string 'Last Question!' is displayed
+
+  * This awares the user that this is the last quesiton
+  
+  ![Last question](/images/last-que.png)
+
+
+    
 
 * The Kitchen
 
