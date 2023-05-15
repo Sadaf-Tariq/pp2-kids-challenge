@@ -18,6 +18,8 @@ let score = document.getElementById("score");
 let que = document.getElementById("question");
 let option1 = document.getElementById("option1");
 let option2 = document.getElementById("option2");
+let question = document.getElementById("question#");
+let lastQue = document.getElementById("lastque");
 
 // Declaring variables 
 
@@ -308,13 +310,15 @@ function incrementScore() {
     let oldScore = parseInt(score.innerText);
     let addScore = oldScore + 10;
     score.innerText = addScore ;
-    console.log(addScore);
-    
 }
 
 
 function incrementQuestion(){
     qCount.innerText = ++count;
+    if(count === 15){
+        question.classList.add('hide');
+        lastQue.classList.remove('hide');
+    }
     if(count === 16){
         showScorePage();
     }

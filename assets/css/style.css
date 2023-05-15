@@ -177,6 +177,12 @@ img{
     letter-spacing: 2px;
 }
 
+.swal2-popup .swal2-styled.swal2-confirm {
+	background-color: #4D4D4D !important;
+}
+
+
+
 /* Media queries */
 
 @media (max-width: 890px) {
