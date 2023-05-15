@@ -1,108 +1,166 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Index - Table Of Contents:
 
-Welcome Sadaf Tariq,
+1. [General Information](#Kids-Challenge)
+2. [Features](#Features)
+3. [Technologies Used](#Technologies-Used)
+4. [Testing](#Testing)
+5. [Bugs](#Bugs)
+6. [Unfixed bugs](#Unfixed-Bugs)
+7. [Validator Testing](#Validator-Testing)
+8. [Deployment](#Deployment)
+9. [Credits](#Credits)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# About Kids-Challenge
+The everything DESI website is a catering website for anyone who loves desi food. When deciding on a topic for the project. I wanted to do something I am passionate about. I love desi food and I love to cook, and catering service is something I want to do in the future so I concluded to do a catering website. The website offers spicy, rich, flavourful, and diverse desi cuisine.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Users of this website will be able to find all the information they need to know about everything DESI website: About the kitchen, specialty, full menu, the service gallery, contact information, and an enquiry form. This site is targeted towards people who love to eat desi food and wants a reliable catering service to cater their events.
 
-## Gitpod Reminders
+![Responsive image](/images/amiresponsive.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Features
+* The Header
 
-`python3 -m http.server`
+  * Featured at the top of the page, the header shows the logo of the website at the right of the right corner: everything DESI that links to the home page
 
-A blue button should appear to click: _Make Public_,
+  * The logo image is present at the left corner of the header that also links to the home page
 
-Another blue button should appear to click: _Open Browser_.
+  * The header clearly shows the name of the website with a font easy to understand and a color that contrasts with the background
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+    ![Header Image](/images/header.png)
 
-A blue button should appear to click: _Make Public_,
+* Navigation
 
-Another blue button should appear to click: _Open Browser_.
+  * Featured after the header, it contains the navigation links for the website present at the center of the navigation bar
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  * The navigation links are: Home, Menu, Gallery and contact us that links to the different pages of the website
 
-To log into the Heroku toolbelt CLI:
+  * The navigation links make it easy for the user to find the different pages of the website and use the same color theme but different font
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+    ![Navigation Bar](/images/navigationbar.png)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* Main Image and Banner
 
-------
+  * This section of the page provides us with a delicate photograph of biryani in a dish, surrounded by spices. The image with an eyecatching animation lets the user envision that the goal of the website is desi food industry oriented
 
-## Release History
+  * The main image also contains a banner with a semi-transparent background of the same color theme
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+  * The cover image on the banner sums up the tone and premise of the website and strengthens the User's memory of the brand itself
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+    ![Main image and banner](/images/main-image.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+* The Kitchen
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  * This section of the page contains a brief description of what happens inside the kitchen to make the user feel trusted
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+    ![The kitchen](/images/kitchen.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+* The Highlight
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+  * The highlight section gives the detail of everything DESI's specialty, this section ensures that the user do not loose their interest
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+    ![our speciality](/images/highlight.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* The Footer
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  * The footer section encourages the user to keep in contact and provides a phone number, and street address where they can be found
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  * The footer section also includes social media icons so that users can find the catering service on Facebook, Twitter, Youtube, and Instagram
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  * The  contact information on the footer section is valuable to users as it helps them to find or contact them if they need to
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+    ![The footer](/images/footer.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* Menu Page
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  * The menu link on the navigation bar links the age to the Menu page, where a detailed menu is available for users to help them to find the right desi food they want to order for their important event
 
-------
+  * It is the most important premise of the website as the majority of the users will be interested in this page hence why there is a separate page dedicated to this section and made in detail with a beautiful food background with the white font to ease accessibility
 
-## FAQ about the uptime script
+    ![The menu](/images/menu.png)
 
-**Why have you added this script?**
+​    
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+* The Gallery
 
-**How will this affect me?**
+  * The gallery link on the navigation bar takes the user to the gallery page where there are images available for the users 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+  * The gallery images of food served by everything DESI and their catering service give a clear picture to users to make an informed decision
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+    ![The gallery](/images/gallery.png)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+* The Contact-us Page
 
-**So….?**
+  * The contact-us link on the navigation bar takes the user to the Contact us page, which consists of two sections. The contact section encourages the user to keep in contact and provides a phone number, email address, and street address where they can be found
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+  * It also includes information about its opening to help the users to know when they should be contacted
 
-**Can I opt out?**
+  * The enquiry section has a form for the users to give all the relevant information about the enquiry they want to make. This form feature establishes a connection between the user and the site
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+    ![The contact us page](/images/contact.png)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+  * When the user presses the submit with all the information, they are taken to a Thank you window, further, emphasizing interaction 
 
-**Anything more?**
+    ![Thank you window](/images/thankyou.png)
+# Technologies Used
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+#### Languages Used
 
----
+* HTML5
+* CSS3
+* JavaScript
 
-Happy coding!
+# Testing
+
+* I tested the website on different browsers such as Microsoft Edge, Opera, Firefox, Chrome, and Safari and it works on all browser
+* I confirm that this project is responsive, functions on all standard screen sizes, tested responsiveness using the developer tools, and looks good 
+
+<img src="/images/responsive(1).png"  width="750" height="500"> <img src="/images/responsive(2).png"  width="300" height="500"> <img src="/images/responsive(3).png"  width="500" height="700">
+
+* I confirm that the header, navigation bar, highlights, footer, menu, and form text are all readable and easy to understand
+* I have confirmed that the form works: requires entries in every field, will only accept emails in an email field, and the submit button works
+
+# Bugs
+* When I tested my HTML code for the index.html page on html validator, I got the error that one of the div element was unclosed which was causing another section to give another error, I solved the problem by removing that div element
+* Another error I found for the menu.html page, where I put an anchor element inside a button element, I solved that error by replacing the button to form 
+* For the style.css for the header element in a media query, I got an error because there was a margin selector that had a negative value, I solved that error by removing that selector
+
+# Unfixed Bugs
+There is no unfixed bugs but there is a warning indicated by html validator for gallery.html page of the website, for my design I do not need any header for this section of the page that is why this warning was not entertained
+![Warning Image](/images/warning.png)
+
+# Validator Testing
+* HTML
+  * No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
+* CSS
+  * No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
+* JShint
+  * No errors were found when passing through the official [JShint validator](https://jshint.com/)
+* Accessibility
+  * I confirmed that the colors and fonts chosen are easy to read and accessible by running it through lighthouse in developer tools
+
+    ![Lighthouse report](/images/lighthouse.png)
+
+# Deployment
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+  - In the GitHub repository, navigate to the Settings tab
+  - From the source section drop-down menu, select the Master Branch
+  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found here - [https://sadaf-tariq.github.io/pp2-kids-challenge/](https://sadaf-tariq.github.io/pp2-kids-challenge/)
+
+# Credits
+* Content
+  * [Font awesome](https://fontawesome.com/) provided the icon for my header and cover text on the hero-image element
+  * [w3schools](https://www.w3schools.com/) helped me in creating my form
+  * [w3schools](https://www.w3schools.com/) helped me in creating my button for the menu page
+  * [StackOverflow](www.stackoverflow.com) helped me to create a custom bottom border on the speciality section heading
+  * [StackOverflow](www.stackoverflow.com) helped me to remove the error I was getting for an anchor element inside the button element
+  * The code for the social media link for the footer was taken from Code Institute [Love Running](https://github.com/Sadaf-Tariq/love-running/blob/main/index.html) project
+  * The text for the home page was taken from [Wikipedia](www.wikipedia .com) and some open-source sites
+  * The logo image for the website was taken from [Wix](www.wix.com)
+  * I got the inspiration for the website from Zouq restaurant, Koyla restaurant, and David Smyth Catering
+  * [w3schools](https://www.w3schools.com/), [StackOverflow](www.stackoverflow.com),  and Code Institute's walkthrough project [Love Running](https://github.com/Sadaf-Tariq/love-running) helped me so much throughout my project
+
+* Media
+  * The images used in the website were taken from [Pexels](https://www.pexels.com/)
+
